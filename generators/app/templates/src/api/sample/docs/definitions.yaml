@@ -1,0 +1,31 @@
+definitions:
+
+  Sample:
+    allOf:
+      - "$ref": "#/definitions/SampleModel"
+      - properties:
+          _id:
+            type: string
+
+  SampleModel:
+    type: object
+    properties:
+      name:
+        type: string
+      info:
+        type: string
+
+  Samples:
+    allOf:
+      - properties:
+          docs:
+            type: array
+            items:
+              "$ref": "#/definitions/Sample"
+      - "$ref": "#/definitions/PaginateResult"
+
+  SamplesFilters:
+    type: object
+    properties:
+      name:
+        type: string

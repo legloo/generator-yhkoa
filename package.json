@@ -1,0 +1,24 @@
+{
+  "name": "generator-yhkoa",
+  "version": "1.0.0",
+  "description": "koa2 + mogondb server",
+  "main": "generators/index.js",
+  "files": [
+    "generators"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "author": "yuhao_zhu@yeah.net",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "lodash": "^4.17.15",
+    "pluralize": "^8.0.0",
+    "yeoman-generator": "^4.10.1",
+    "yosay": "^2.0.2"
+  }
+}

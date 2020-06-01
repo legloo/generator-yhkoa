@@ -1,0 +1,33 @@
+definitions:
+
+  Log:
+    allOf:
+      - "$ref": "#/definitions/LogModel"
+      - properties:
+          _id:
+            type: string
+
+  LogModel:
+    type: object
+    properties:
+      name:
+        type: string
+      info:
+        type: string
+      active:
+        type: boolean
+
+  Logs:
+    allOf:
+      - properties:
+          docs:
+            type: array
+            items:
+              "$ref": "#/definitions/Log"
+      - "$ref": "#/definitions/PaginateResult"
+
+  LogsFilters:
+    type: object
+    properties:
+      active:
+        type: boolean

@@ -1,0 +1,33 @@
+definitions:
+
+  User:
+    allOf:
+      - "$ref": "#/definitions/UserModel"
+      - properties:
+          _id:
+            type: string
+
+  UserModel:
+    type: object
+    properties:
+      name:
+        type: string
+      info:
+        type: string
+      active:
+        type: boolean
+
+  Users:
+    allOf:
+      - properties:
+          docs:
+            type: array
+            items:
+              "$ref": "#/definitions/User"
+      - "$ref": "#/definitions/PaginateResult"
+
+  UsersFilters:
+    type: object
+    properties:
+      active:
+        type: boolean

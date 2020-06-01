@@ -1,0 +1,31 @@
+definitions:
+
+  SampleWithSocket:
+    allOf:
+      - "$ref": "#/definitions/SampleWithSocketModel"
+      - properties:
+          _id:
+            type: string
+
+  SampleWithSocketModel:
+    type: object
+    properties:
+      name:
+        type: string
+      info:
+        type: string
+
+  SampleWithSockets:
+    allOf:
+      - properties:
+          docs:
+            type: array
+            items:
+              "$ref": "#/definitions/SampleWithSocket"
+      - "$ref": "#/definitions/PaginateResult"
+
+  SampleWithSocketsFilters:
+    type: object
+    properties:
+      name:
+        type: string

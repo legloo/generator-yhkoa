@@ -1,0 +1,31 @@
+definitions:
+
+  SampleWithImage:
+    allOf:
+      - "$ref": "#/definitions/SampleWithImageModel"
+      - properties:
+          _id:
+            type: string
+
+  SampleWithImageModel:
+    type: object
+    properties:
+      name:
+        type: string
+      image:
+        "ref": "#/definitions/ImageInfo"
+
+  SampleWithImages:
+    allOf:
+      - properties:
+          docs:
+            type: array
+            items:
+              "$ref": "#/definitions/SampleWithImage"
+      - "$ref": "#/definitions/PaginateResult"
+
+  SampleWithImagesFilters:
+    type: object
+    properties:
+      name:
+        type: string
